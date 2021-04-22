@@ -75,6 +75,8 @@ locals {
 
   tags = merge(local.generated_tags, local.input.tags)
 
+  tags_as_list = values(local.tags)
+
   tags_as_list_of_maps = flatten([
     for key in keys(local.tags) : merge(
       {
@@ -135,6 +137,7 @@ locals {
     delimiter           = local.delimiter
     attributes          = local.attributes
     tags                = local.tags
+    tags_as_list        = local.tags_as_list
     additional_tag_map  = local.additional_tag_map
     label_order         = local.label_order
     regex_replace_chars = local.regex_replace_chars
