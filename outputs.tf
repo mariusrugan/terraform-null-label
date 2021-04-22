@@ -48,6 +48,11 @@ output "tags" {
   description = "Normalized Tag map"
 }
 
+output "tags_as_list" {
+  value       = local.enabled ? local.tags_as_list : []
+  description = "Normalized Tag list"
+}
+
 output "additional_tag_map" {
   value       = local.additional_tag_map
   description = "The merged additional_tag_map"
@@ -85,4 +90,3 @@ output "context" {
   Note: this version will have null values as defaults, not the values actually used as defaults.
 EOT
 }
-

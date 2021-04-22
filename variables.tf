@@ -86,6 +86,12 @@ variable "tags" {
   description = "Additional tags (e.g. `map('BusinessUnit','XYZ')`"
 }
 
+variable "tags_as_list" {
+  type        = list(string)
+  default     = []
+  description = "Additional tags (e.g. `list['BusinessUnit','XYZ']`"
+}
+
 variable "additional_tag_map" {
   type        = map(string)
   default     = {}
